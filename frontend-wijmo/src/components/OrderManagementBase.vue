@@ -3,6 +3,7 @@
 </template>
 
 <script>
+    import PersonInChargeBase from '../components/PersonInChargeBase.vue'
     const axios = require('axios').default;
 
     export default{
@@ -53,10 +54,15 @@
                 }
             },
             async processData(data){
+                let PersonInChargeClass = this.$Vue.extend(PersonInChargeBase);
+                this.personInChargeId = new PersonInChargeClass();
                 
 
                 let Promises = data.map(async (value) => {
                     if(value == null) return
+                    if (value.personInChargeId && value.personInChargeId.id){
+                        value.personInChargeId = await this.personInChargeId.getRealEntity(value.personInChargeId.id);
+                    }
                 });
                 await Promise.all(Promises);
                 for(var i = 0; i < data.length ; i++ ) {

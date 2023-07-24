@@ -34,6 +34,7 @@
             </div>
             <PersonInChargeId offline label="PersonInChargeId" v-model="item.personInChargeId" :editMode="false" :key="false" @change="change" />
             <RegisteredPerson offline label="RegisteredPerson" v-model="item.registeredPerson" :editMode="false" :key="false" @change="change" />
+            <OrderManagementDetailsManager offline label="OrderManagementDetails" v-model="item.orderManagementDetails" :editMode="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>

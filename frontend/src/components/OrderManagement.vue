@@ -28,6 +28,7 @@
             <String label="TotalOrderAmount" v-model="value.totalOrderAmount" :editMode="editMode"/>
             <PersonInChargeId offline label="PersonInChargeId" v-model="value.personInChargeId" :editMode="editMode" @change="change"/>
             <RegisteredPerson offline label="RegisteredPerson" v-model="value.registeredPerson" :editMode="editMode" @change="change"/>
+            <OrderManagementDetailsList offline label="OrderManagementDetails" v-model="value.orderManagementDetails" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>

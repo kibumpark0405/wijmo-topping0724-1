@@ -71,6 +71,7 @@
         </div>
 
         <div>
+            <OrderManagementDetailsManager offline label="OrderManagementDetails" v-model="value.orderManagementDetails" :editMode="editMode" @change="change"/>
         </div>
 
         <v-divider class="border-opacity-100 my-divider"></v-divider>

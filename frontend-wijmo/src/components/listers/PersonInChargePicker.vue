@@ -42,7 +42,7 @@
                 if(tmpValue.data) {
                     var val = tmpValue.data
                     
-                    
+                    me.selected = me.list.find((item) => item.name == val.name)
                     me.referenceValue = val
                 }
             }

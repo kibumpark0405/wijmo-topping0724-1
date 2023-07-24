@@ -31,7 +31,7 @@
             style="margin-top:10px; max-height:65vh;"
             class="wj-felx-grid"
         >
-            <wj-flex-grid-filter :filterColumns="['accountingYearAndMonth','orderType','orderNumber','placeOfDelivery','fewWeeks','dueDate','numberOfOrderItems','totalDrinkingCapacity','totalOrderAmount','personInChargeId','registeredPerson',]" />
+            <wj-flex-grid-filter :filterColumns="['accountingYearAndMonth','orderType','orderNumber','placeOfDelivery','fewWeeks','dueDate','numberOfOrderItems','totalDrinkingCapacity','totalOrderAmount','personInChargeId','registeredPerson','orderManagementDetails',]" />
             <wj-flex-grid-column binding="index" header="Number" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="accountingYearAndMonth" header="accountingYearAndMonth" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="orderType" header="orderType" width="2*" :isReadOnly="true" align="center" />
@@ -43,8 +43,9 @@
             <wj-flex-grid-column binding="totalDrinkingCapacity" header="totalDrinkingCapacity" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="totalOrderAmount" header="totalOrderAmount" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="registeredPerson" header="registeredPerson" width="2*" :isReadOnly="true" align="center" />
-            <wj-flex-grid-column binding="personInChargeId." header="personInCharge" width="2*" :isReadOnly="true" align="center" />
+            <wj-flex-grid-column binding="personInChargeId.name" header="personInCharge" width="2*" :isReadOnly="true" align="center" />
         </wj-flex-grid>
+        <OrderManagementDetailsDetailGrid :selectedGrid="selectedGrid" />
         <v-col>
             <v-dialog
                 v-model="openDialog"
@@ -111,6 +112,7 @@
 <script>
 import OrderManagmentQuery from '../components/OrderManagmentQuery.vue';
 import OrderManagement from '../components/OrderManagement.vue'
+import OrderManagementDetailsDetailGrid from './OrderManagementDetailsDetailGrid.vue'
 
 const axios = require('axios').default;
 
@@ -131,6 +133,7 @@ export default {
     components:{
         OrderManagmentQuery,
         OrderManagement,
+        OrderManagementDetailsDetailGrid,
     },
     data: () => ({
         flex: null,
@@ -189,7 +192,7 @@ export default {
         onSelectionChanged(s) {
             let selectedItem = s.collectionView.currentItem;
             if (selectedItem) {
-                this.selectedGrid = selectedItem;
+                this.selectedGrid = selectedItem.orderManagementDetails;
                 this.selectedGrid = this.selectedGrid.map((user, index) => {
                     return { ...user, index: index };
                 });

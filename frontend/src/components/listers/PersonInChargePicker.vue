@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-card-title @click="openDialog" style="cursor: pointer;">
-            PersonInCharge : 
+            PersonInCharge :  {{referenceValue ? referenceValue.name : '' }} 
         </v-card-title>
 
         <v-dialog v-model="pickerDialog">
@@ -21,6 +21,7 @@
                                     
                                     <v-list-item-content>
                                         <v-list-item-title>
+                                            {{item.name }}
                                         </v-list-item-title>
                                         <v-list-item-subtitle>
                                             Name :  {{item.name }}
@@ -75,7 +76,7 @@
                 if(tmpValue.data) {
                     var val = tmpValue.data
                     
-                    
+                    me.selected = me.list.findIndex((item) => item.name == val.name)
                     me.referenceValue = val
                 }
             }

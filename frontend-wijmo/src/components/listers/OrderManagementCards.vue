@@ -88,6 +88,7 @@
                     'totalOrderAmount': '',
                     'personInChargeId': {},
                     'registeredPerson': '',
+                    'orderManagementDetails': [],
                 }
             },
 

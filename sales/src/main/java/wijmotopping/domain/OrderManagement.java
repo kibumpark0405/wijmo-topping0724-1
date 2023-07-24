@@ -34,9 +34,16 @@ public class OrderManagement {
     private String totalOrderAmount;
 
     @Embedded
+    @AttributeOverride(
+        name = "id",
+        column = @Column(name = "personInChargeIdId", nullable = true)
+    )
     private PersonInChargeId personInChargeId;
 
     private RegisteredPerson registeredPerson;
+
+    @ElementCollection
+    private List<OrderManagementDetails> orderManagementDetails;
 
     public static OrderManagementRepository repository() {
         OrderManagementRepository orderManagementRepository = SalesApplication.applicationContext.getBean(

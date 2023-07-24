@@ -33,7 +33,7 @@ mvn spring-boot:run
 ## Test by API
 - sales
 ```
- http :8088/orderManagements id="id" accountingYearAndMonth="accountingYearAndMonth" orderType="orderType" orderNumber="orderNumber" placeOfDelivery="placeOfDelivery" fewWeeks="fewWeeks" dueDate="dueDate" numberOfOrderItems="numberOfOrderItems" totalDrinkingCapacity="totalDrinkingCapacity" totalOrderAmount="totalOrderAmount" personInChargeId="personInChargeId" registeredPerson="registeredPerson" 
+ http :8088/orderManagements id="id" accountingYearAndMonth="accountingYearAndMonth" orderType="orderType" orderNumber="orderNumber" placeOfDelivery="placeOfDelivery" fewWeeks="fewWeeks" dueDate="dueDate" numberOfOrderItems="numberOfOrderItems" totalDrinkingCapacity="totalDrinkingCapacity" totalOrderAmount="totalOrderAmount" personInChargeId="personInChargeId" registeredPerson="registeredPerson" orderManagementDetails="orderManagementDetails" 
 ```
 - personInCharge
 ```

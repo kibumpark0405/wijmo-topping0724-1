@@ -78,6 +78,7 @@
                     { text: "totalOrderAmount", value: "totalOrderAmount" },
                     { text: "personInChargeId", value: "personInChargeId" },
                     { text: "registeredPerson", value: "registeredPerson" },
+                    { text: "orderManagementDetails", value: "orderManagementDetails" },
                 ],
             orderManagement : [],
             newValue: {},
@@ -106,6 +107,7 @@
                 'totalOrderAmount': '',
                 'personInChargeId': {},
                 'registeredPerson': '',
+                'orderManagementDetails': [],
             }
         },
         methods: {

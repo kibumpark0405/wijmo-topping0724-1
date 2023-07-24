@@ -21,6 +21,7 @@
                             
                              PersonInChargeId 
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -36,6 +37,7 @@
                             [ TotalOrderAmount :  {{data.totalOrderAmount }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ PersonInChargeId :  {{data.personInChargeId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ RegisteredPerson :  {{data.registeredPerson }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ OrderManagementDetails :  {{data.orderManagementDetails }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -128,6 +130,7 @@
                 'totalOrderAmount': '',
                 'personInChargeId': {},
                 'registeredPerson': '',
+                'orderManagementDetails': [],
             }
         },
         methods: {

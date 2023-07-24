@@ -56,6 +56,9 @@
                                         <v-list-item-subtitle>
                                             RegisteredPerson :  {{item.registeredPerson }}
                                         </v-list-item-subtitle>
+                                        <v-list-item-subtitle>
+                                            OrderManagementDetails :  {{item.orderManagementDetails }}
+                                        </v-list-item-subtitle>
                                     </v-list-item-content>
 
                                     <v-list-item-action>
@@ -111,6 +114,7 @@
                 
                 
                 
+                
                 var id = me.value[idKey];
                 var tmpValue = await axios.get(axios.fixUrl('/orderManagements/' + id))
                 if(tmpValue.data) {
@@ -126,6 +130,7 @@
                     
                     
                     me.selected = me.list.findIndex((item) => item.personInChargeId == val.personInChargeId)
+                    
                     
                     me.referenceValue = val
                 }
@@ -148,6 +153,7 @@
                     
                     
                     
+                    
                     var id = this.value[idKey];
                     var path = '/ordermanagements/';
                     this.$router.push(path + id);
@@ -158,6 +164,7 @@
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
                     obj['id'] = arr[4]; 
+                    
                     
                     
                     

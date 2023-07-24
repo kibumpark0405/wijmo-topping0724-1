@@ -47,6 +47,7 @@
                 
                 
                 
+                
                 var id = me.value[idKey];
                 var tmpValue = await axios.get(axios.fixUrl('/orderManagements/' + id))
                 if(tmpValue.data) {
@@ -63,6 +64,7 @@
                     
                     me.selected = me.list.find((item) => item.personInChargeId == val.personInChargeId)
                     
+                    
                     me.referenceValue = val
                 }
             }
@@ -73,6 +75,7 @@
                 if (val) {
                     var uriParts = val._links.self.href.split('/');
                     var obj = Number(uriParts.pop());
+                    
                     
                     
                     
